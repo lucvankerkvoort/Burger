@@ -34,24 +34,24 @@ function objToSql(ob) {
 
 var orm = {
   selectAll: function(tableName, cb) {
-    var queryString = "SELECT * FROM" + tableName + ";";
+    var queryString = "SELECT * FROM " + tableName + ";";
     connection.query(queryString, function(err, result) {
       if (err) throw err;
       cb(result);
     });
   },
   insertOne: function(tableName, col, val, cb) {
-    var queryString = "INSERT INTO" + tableName;
+    var queryString = "INSERT INTO " + tableName;
     queryString += " (";
     queryString += col.toString();
     queryString += ") ";
     queryString += "VALUES (";
     queryString += printQuestionMarks(val.length);
-    queryString += ") ";
+    queryString += ");";
 
     console.log(queryString);
 
-    connection.query(querystring, function(err, result) {
+    connection.query(queryString, val, function(err, result) {
       if (err) throw err;
       cb(result);
     });
@@ -72,3 +72,5 @@ var orm = {
     });
   }
 };
+
+module.exports = orm;

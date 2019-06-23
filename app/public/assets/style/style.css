@@ -1,0 +1,13 @@
+body {
+  background: linear-gradient(90deg, orange, #ec2f4b);
+}
+#burgerPic {
+  background: url("../img/burger.png");
+  height: 200px;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.burgers {
+  list-style-type: none;
+}

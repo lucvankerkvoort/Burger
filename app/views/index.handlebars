@@ -1,0 +1,41 @@
+<div class="container">
+    <div class="row justify-content-center mt-5">
+        <div id="burgerPic" class="col-md-2"></div>
+    </div>
+    <div class="row justify-content-center">
+        <div class="col-md-3 text-center">
+            <h2>Eat-Da-Burger</h2>
+        </div>
+    </div>
+    <div class="row justify-content-center ">
+        <div id="incoming" class="col-md-4 text-center">
+            <ul class="burgers">
+                {{#each burgers}}
+                <li>{{burger_name}} <button class="devour btn btn-danger" data-id="{{id}}"
+                        data-state="{{devoured}}">!!DEVOUR
+                        IT!!</button>
+                </li>
+                {{/each}}
+            </ul>
+        </div>
+        <div id="outgoing" class="col-md-4 text-center">
+        </div>
+    </div>
+    <div class="row justify-content-center">
+        <form>
+            <div class="form-group">
+                <textarea class="form-control" id="burgers" rows="3"></textarea>
+            </div>
+
+            <div class="row justify-content-center">
+                <button id="burgerSubmit" type="submit" class="btn btn-primary">Submit</button>
+            </div>
+        </form>
+    </div>
+    <div class="row mt-5"></div>
+    <div class="row mt-5"></div>
+    <div class="row mt-5"></div>
+    <div class="row mt-5"></div>
+    <div class="row mt-5"></div>
+    <div class="row mt-5"></div>
+</div>
