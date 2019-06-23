@@ -11,14 +11,21 @@
         <div id="incoming" class="col-md-4 text-center">
             <ul class="burgers">
                 {{#each burgers}}
-                <li>{{burger_name}} <button class="devour btn btn-danger" data-id="{{id}}"
-                        data-state="{{devoured}}">!!DEVOUR
-                        IT!!</button>
-                </li>
+                {{#unless devoured}}
+                {{> burger/burger devoured=true}}
+                {{/unless}}
                 {{/each}}
             </ul>
         </div>
         <div id="outgoing" class="col-md-4 text-center">
+            <ul class="burgers">
+                {{#each burgers}}
+                {{#if devoured}}
+                <li>{{burger_name}}
+                </li>
+                {{/if}}
+                {{/each}}
+            </ul>
         </div>
     </div>
     <div class="row justify-content-center">

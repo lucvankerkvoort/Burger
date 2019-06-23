@@ -66,7 +66,7 @@ var orm = {
     queryString += val;
 
     console.log(queryString);
-    connection.query(querystring, function(err, result) {
+    connection.query(queryString, function(err, result) {
       if (err) throw err;
       cb(result);
     });
